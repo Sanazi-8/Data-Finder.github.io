@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Recycle Schedule browser in Calgary</title>
+    <script type="text/javascript" src="data3Function.js"></script>
+    <script type="text/javascript" src="Errorhandling.js"></script>
+    <link type="text/css" rel="stylesheet" href="data3Design.css">
+    <link type='text/css' rel='stylesheet' href='shared-style.css'>
+
+</head>
+<!-- https://data.calgary.ca/resource/jq4t-b745.json-->
+
+<body>
+    <nav class="topnav">
+        <a class="active" href="index.html">Home</a>
+        <a href="data1.html">incident</a>
+        <a href="data2.html">Urban Forest</a>
+        <a href="data4.html">Police stations</a>
+        <!-- <a href="data2.html">Navigation using CSS Example</a> -->
+
+    </nav>
+
+    <div id="search-input-area">
+
+        <div class='text'>
+            <h2>Browse through Recycle Schedule Log of Calgary</h2>
+        </div>
+
+        <label for="address"> Address: </label>
+        <input type="text" placeholder="Input the address" id="address">
+
+
+
+        <div>
+            <label for="community"> Community: </label>
+            <input type="text" id="community" placeholder="input the community name">
+        </div>
+        <div>
+            <label for="day"> Collection day:</label>
+            <input type="text" placeholder="Input the day of the collection" id="day">
+        </div>
+
+
+    </div>
+    <div id="output" class='hidden'>
+        <div id="searchItem">
+            <!-- HTML will go here to say what you were searching on-->
+
+        </div>
+        <div id="searchresults">
+            <template id="card-template">
+                <!-- This is a card we want to clone -->
+                <div class="card">
+                    <div class="card-match">
+                        <label>Match Found</label>
+                        <span class="card-id"></span>
+                    </div>
+
+                    <div class="fields">
+                        <label>Address:</label>
+                        <div class="card-addr"></div>
+                    </div>
+
+                    <div class="fields">
+                        <label>Community:</label>
+                        <div class="card-name"></div>
+                    </div>
+
+                    <div class="fields">
+                        <label>Collection Day:</label>
+                        <div class="card-day"></div>
+                    </div>
+
+                    <div class="fields">
+                        <label>Commodity: </label>
+                        <div class="card-commo"></div>
+                    </div>
+
+                    <div class="fields">
+                        <label>Quadrant: </label>
+                        <div class="card-quad"></div>
+                    </div>
+
+                    <div class="fields">
+                        <label>Day code: </label>
+                        <div class="card-code"></div>
+                    </div>
+
+                    <div class="fields">
+                        <label>Location:</label>
+                        <div class="card-locate"></div>
+                    </div>
+
+
+                </div>
+            </template>
+            <div id="cards">
+
+            </div>
+        </div>
+    </div>
+
+    <div id="JSON-errors" class="hidden">
+        <!-- Error messages get show here -->
+    </div>
+</body>
+
+</html>

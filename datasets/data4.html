@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> police station browser in Calgary</title>
+    <script type="text/javascript" src="data4Function.js"></script>
+    <script type="text/javascript" src="Errorhandling.js"></script>
+    <link type="text/css" rel="stylesheet" href="data4Design.css">
+    <link type='text/css' rel='stylesheet' href='shared-style.css'>
+
+</head>
+<!-- https://data.calgary.ca/resource/ap4r-bav3.json-->
+
+<body>
+    <nav class="topnav">
+        <a class="active" href="index.html">Home</a>
+        <a href="data1.html">Incidents</a>
+        <a href="data2.html">Urban Forest</a>
+        <a href="data3.html">Recycling Schedule</a>
+        <!-- <a href="data2.html">Navigation using CSS Example</a> -->
+
+    </nav>
+
+    <div id="search-input-area">
+
+        <div class='text'>
+            <h2>Browse through police station information Log of Calgary</h2>
+        </div>
+        <div>
+            <label for="name"> Police Station Name: </label>
+            <input type="text" id="name" placeholder="input the police station name">
+        </div>
+
+        <label for="address"> Address: </label>
+        <input type="text" placeholder="Input the address" id="address">
+
+
+
+
+        <div>
+            <label for="number"> Phone Number of the Police Station:</label>
+            <input type="text" placeholder="Input the phone number of the station" id="number">
+        </div>
+
+
+    </div>
+    <div id="output" class='hidden'>
+        <div id="searchItem">
+            <!-- HTML will go here to say what you were searching on-->
+
+        </div>
+        <div id="searchresults">
+            <template id="card-template">
+                <!-- This is a card we want to clone -->
+                <div class="card">
+                    <div class="card-match">
+                        <label>Match Found</label>
+                        <span class="card-id"></span>
+                    </div>
+
+                    <div class="fields">
+                        <label>Station Name:</label>
+                        <div class="card-name"></div>
+                    </div>
+
+                    <div class="fields">
+                        <label>Address:</label>
+                        <div class="card-addr"></div>
+                    </div>
+
+                    <div class="fields">
+                        <label>phone number:</label>
+                        <div class="card-phone"></div>
+                    </div>
+
+                    <div class="fields">
+                        <label>Station Type: </label>
+                        <div class="card-type"></div>
+                    </div>
+
+                    <div class="fields">
+                        <label>Location:</label>
+                        <div class="card-locate"></div>
+                    </div>
+
+
+                </div>
+            </template>
+            <div id="cards">
+
+            </div>
+        </div>
+    </div>
+
+    <div id="JSON-errors" class="hidden">
+        <!-- Error messages get show here -->
+    </div>
+</body>
+
+</html>
